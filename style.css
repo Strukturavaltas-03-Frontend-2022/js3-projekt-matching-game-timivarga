@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(203, 237, 219);
+  height: 100%;
+  display: flex;
+}
+
+.matching-game {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 600px;
+
+}
+
+.card {
+  width: calc(20% - 10px);
+  aspect-ratio: 1 / 1;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+  padding: 20px 0;
+}
+
+.card:active {
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
